@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+        rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2111d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121022",
+                    },
+                    fontFamily: {
+                        display: ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+
+
+        <!-- Navigation -->
+          <header class="flex items-center justify-between px-6 py-4 border-b bg-white sticky top-0">
+        <h2 class="text-xl font-bold">Dashboard</h2>
+        <nav class="hidden md:flex gap-8">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="story.html">Story</a>
+            <a href="visualization.html">Visualizations</a>
+            <a href="conclusion.html">Conclusion</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </header>
+    <div id="mobileMenu" class="hidden md:hidden border-b bg-white">
+        <nav class="flex flex-col p-4 gap-4">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="story.html">Story</a>
+            <a href="visualization.html">Visualizations</a>
+            <a href="conclusion.html">Conclusion</a>
+        </nav>
+    </div>
+        <!-- Main Content -->
+        <main class="flex-1 w-full">
+
+            <div class="px-10 py-10">
+
+                <h1 class="text-5xl font-black mb-8">
+                    Story on Electricity Consumption in India
+                </h1>
+
+                <!-- Tableau Story (All stories inside) -->
+                <iframe src="https://public.tableau.com/views/Book4_17728921597520/Story1?:embed=true&:showVizHome=no"
+                    width="100%" style="height:90vh" frameborder="0">
+                </iframe>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 dark:border-slate-800 px-10 py-12">
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">bolt</span>
+                    <span class="font-bold text-lg">India Electricity Analysis</span>
+                </div>
+
+                <p class="text-slate-400 text-sm">
+                    © 2024 India Energy Project. Data based on FY 2019-20 reports.
+                </p>
+
+
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const b = document.getElementById("menuBtn");
+            const m = document.getElementById("mobileMenu");
+            b.addEventListener("click", () => m.classList.toggle("hidden"));
+        });
+    </script>
+
+</body>
+
+</html>
